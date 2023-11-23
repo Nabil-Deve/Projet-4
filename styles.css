@@ -4,7 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif; /* faudras reajuster les taille des polices */
 }
+/*
+-mettre un padding-left aux button et non les centrer
+- les soulignements une div avec une sous div; et mettre en column dans la sous div 
+-utilise un order pour les footer */
 
 :root {
   --white: #ffffff;
@@ -18,7 +23,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Proxima Nova", "Nunito Sans", sans-serif;
   border: none;
 }
 
@@ -74,8 +78,7 @@ nav img[alt="image logo"] {
   margin: 60px auto 20px;
 }
 
-span.visual {
-  text-decoration: underline #4361ee;
+.visual {
 }
 
 .story img {
@@ -98,16 +101,9 @@ span.visual {
   font-size: 18px;
   font-weight: 700;
 }
-
-.icons {
-  margin-bottom: 56px;
-  margin-left: 5px;
-  display: flex;
-  width: 30px;
-  height: 20px;
-  justify-content: center;
-  align-items: center;
-}
+.story button img {
+  position: absolute;
+} /* Pourquoi ça ne marche pas?*/
 
 .story > section {
   display: flex;
@@ -154,22 +150,23 @@ span.brand {
 .services {
   background: #e9f4ff;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
+  margin-top: 40px;
 }
 
-span.services {
+.services h1 span {
   text-decoration: underline #4361ee;
 }
 
 .services > h1 {
-  color: var(--Heading, #1a2630);
   text-align: center;
   font-size: 24px;
   font-weight: 700;
   line-height: 150%;
-  margin: 20px auto 20px;
-  margin: 40px 0;
+  margin: 40px;
 }
 
 .services > section {
@@ -190,6 +187,10 @@ span.services {
   overflow: hidden;
   display: flex;
   flex-direction: column-reverse;
+}
+
+.services .carte:nth-child(n + 5) {
+  display: none;
 }
 
 .services .carte > img {
@@ -219,8 +220,24 @@ span.services {
   border: none;
 }
 
+.services button img {
+  vertical-align: middle;
+}
+
 .services .carte h1 img {
-  margin-right: 10px;
+  margin-right: 5px;
+}
+
+.services .carte h1 {
+  padding-left: 10px;
+}
+
+.services .carte p {
+  padding-left: 15px;
+}
+
+.services .carte img {
+  vertical-align: middle;
 }
 
 /* Partie Happy*/
@@ -233,6 +250,7 @@ span.services {
 .happy {
   background: #e9f4ff;
   width: 80%;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,28 +266,29 @@ span.stories {
 }
 
 .happy p {
-  width: 295px;
   color: var(--Body-text, #4f5863);
   text-align: center;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   line-height: 170%;
-}
-
-/* Trois point */
-
-.trois-points {
   margin-top: 20px;
 }
 
+/* Partie Trois point */
+.trois-points {
+}
+/* Partie contact-us-today*/
+.contact-us-today {
+  margin: 40px 40px;
+}
+/* Partie contact-us-container*/
 .contact-us-coontainer {
   width: 100vw;
   position: relative;
   margin: 60px 0;
 }
 
-/* Form*/
+/* Partie coordonnees-formulaire*/
 .coordonnees-formulaire {
   width: 100vw;
   position: relative;
@@ -309,8 +328,7 @@ span.cont {
 .coordonee img {
   grid-row: 1/3;
   justify-self: center;
-}
-
+} /* Form*/
 .formulaire {
   width: 80%;
   position: relative;
@@ -323,6 +341,10 @@ span.cont {
   gap: 15px;
   top: 20px;
   box-shadow: 0px 0px 9px 1px rgba(195, 195, 195, 0.83);
+}
+
+.formulaire button img {
+  vertical-align: middle;
 }
 
 .input-container {
@@ -363,32 +385,83 @@ span.stay {
 }
 
 /* Partie Maintain*/
-.clapping {
+.maintain .carte {
   border-radius: 15px;
   background: #e9f4ff;
-  width: 90%;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.maintain .carte:last-of-type {
+  display: none;
+}
+.maintain .carte > img {
+  width: 100%;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+}
+
+.maintain .carte p {
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #1a2630;
+  margin: 1rem 5%;
+}
+
+.maintain .carte a {
+  font-weight: 400;
+  font-size: 16px;
+  color: #4361ee;
+  margin: 0 5% 1rem;
+  vertical-align: middle;
+}
+.maintain a img {
+  vertical-align: middle;
+}
+
+.maintain button img {
+  vertical-align: middle;
+}
+/*.clapping {
+  border-radius: 15px;
+  background: #e9f4ff;
+  width: 100%;
   margin-bottom: 30px;
 }
 
 .drawing {
-  width: 90%;
+  width: 100%;
   border-radius: 15px;
   background: #e9f4ff;
   margin-bottom: 30px;
 }
 
+.writing {
+  display: none;
+  width: 100%;
+  border-radius: 15px;
+  background: #e9f4ff;
+  margin-bottom: 30px;
+}*/
+
 .maintain button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 54px;
   padding: 16px 34px;
   border-radius: 8px;
   margin-bottom: 50px;
-  margin-left: 120px;
+  margin-left: 35%;
   background: #4361ee;
   border: none;
   color: white;
 }
 
-/* Footer*/
+/* Partie Footer*/
 
 footer {
   background: #03071b;
@@ -519,12 +592,53 @@ footer .social-icon img {
 
 /* Version tablette  */
 @media screen and (min-width: 768px) {
-  .story h1 {
-    text-align: end;
-    padding: 0;
-    font-size: 32px;
-    color: #4361ee;
+  /* Partie story*/
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
+  .story > section {
+    align-items: flex-start;
+    justify-self: center;
+    align-self: center;
+    margin-left: 40px;
+  }
+
+  .story h1 {
+    text-align: left;
+    font-size: 32px;
+  }
+
+  .story > img {
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  /* Partie elevate*/
+
+  /*Partie services*/
+
+  /*Partie happy*/
+
+  /* Partie contact-us-container*/
+  .coordonnee-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Partie stay-updates */
+
+  /* Partie maintain */
+  .maintain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .maintain button {
+    justify-self: center;
+    gap: 6px;
+  }
+
+  /* Partie footer */
   footer {
     grid-template-columns: 3fr 6fr;
     padding: 40px 7vw 20px 7vw;
@@ -536,86 +650,122 @@ footer .social-icon img {
     width: 100%;
     display: grid;
     grid-template-columns: 3fr 6fr;
+  }
+
+  .footer-logo-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-logo-container > img {
+    height: 100px;
   }
 
   .copyright {
     grid-row: 3/4;
     grid-column: 1/3;
   }
+
+  .info {
+    margin-right: 120px;
+  }
 }
 
 /* Version Desktop */
-@media screen and (min-width: 1180px) {
-  footer {
-    grid-template-columns: 2fr 4fr 2fr;
-    padding: 40px 7vw 20px 7vw;
-  }
-
-  .footer-info {
-    grid-row: 1/2;
-    grid-column: 2/3;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 3fr;
-    column-gap: 10%;
-  }
-
-  .copyright {
-    grid-row: 2/3;
-    grid-column: 1/4;
-  }
+@media screen and (min-width: 900px) {
   .email-container {
     grid-column: 3/4;
   }
+  /* Partie story */
 
-  .story button {
-    height: 54px;
-    padding: 16px 34px;
-    align-items: center;
-    gap: 6px;
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 
-  .story img {
+  .story > section {
+    align-items: flex-start;
+    justify-self: center;
+    align-self: center;
+    margin-left: 40px;
+  }
+
+  .story h1 {
+    text-align: left;
+    font-size: 54px;
+  }
+  .story button {
+  }
+
+  .story > img {
+    margin-top: 80px;
+    margin-left: 50px;
     width: 600px;
     height: 600px;
-    margin-right: 20px;
   }
 
+  /* Partie elevate*/
+  .elevate .computer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .elevate h1 {
     width: 100%;
     left: 425px;
+    text-align: center;
+    font-size: 48px;
   }
 
   .elevate p {
-    color: var(--Body-text, #4f5863);
+    margin-left: 300px;
+    width: 60%;
     font-size: 20px;
     font-weight: 400;
     line-height: 170%;
   }
 
-  .elevate img {
-    width: 550px;
-    height: 442px;
+  .computer {
+    margin-top: 50px;
   }
+
+  .paragraphs p {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 170%;
+    display: block;
+    margin-top: 30px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .elevate img {
+    margin-left: 80px;
+  }
+
+  /*Partie services*/
 
   .services {
     width: 100%;
   }
 
   .services h1 {
-    color: var(--Heading, #1a2630);
-    text-align: center;
     font-size: 48px;
     font-weight: 700;
-    display: flex;
-    justify-content: center;
   }
 
-  /*.services .carte img {
-    width: 50%;
-    height: 50%;
-    position: absolute;
-  }*/
+  .services > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+  }
+
+  .services .carte:nth-child(n + 5) {
+    display: flex;
+  }
 
   .services button {
     height: 54px;
@@ -624,8 +774,12 @@ footer .social-icon img {
     gap: 6px;
   }
 
+  /*Partie happy*/
+
   .happy {
-    width: 100%;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .happy h1 {
     color: #1a2630;
@@ -634,9 +788,21 @@ footer .social-icon img {
     font-weight: 700;
   }
 
-  .happy p {
-    top: 115px;
-    left: 391px;
+  .happy .section > img {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Partie contact-us-container*/
+
+  .contact-us-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .contact-us {
+    margin-top: 50px;
   }
 
   .coordonnees {
@@ -648,6 +814,57 @@ footer .social-icon img {
     gap: 40px;
   }
   .formulaire {
+    width: 70%;
+    height: 100%;
+    transform: translate(35%);
+  }
+
+  .coordonnees-formulaire {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coordonnee-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Partie stay-updates */
+
+  /* Partie maintain */
+  .maintain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+  }
+
+  .maintain .carte:last-of-type {
+    display: grid;
+  }
+  /*Button Maintain */
+  .maintain button {
+    justify-self: center;
+    float: right;
+    gap: 6px;
+  }
+
+  /*Footer*/
+  footer {
+    grid-template-columns: 2fr 4fr 2fr;
+    padding: 40px 7vw 20px 7vw;
+  }
+
+  .footer-info {
+    grid-row: 1/2;
+    grid-column: 2/3;
     width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    column-gap: 20%;
+  }
+
+  .copyright {
+    grid-row: 2/3;
+    grid-column: 1/4;
   }
 }
