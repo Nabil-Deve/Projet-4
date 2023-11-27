@@ -81,7 +81,8 @@ nav img[alt="image logo"] {
 .visual {
 }
 
-.story img {
+.story > img {
+  /* On sélectionne seulement le fils direct*/
   position: relative;
   top: 30px;
 }
@@ -102,7 +103,7 @@ nav img[alt="image logo"] {
   font-weight: 700;
 }
 .story button img {
-  position: absolute;
+  margin-left: 10px;
 } /* Pourquoi ça ne marche pas?*/
 
 .story > section {
@@ -843,9 +844,9 @@ footer .social-icon img {
   }
   /*Button Maintain */
   .maintain button {
-    justify-self: center;
-    float: right;
-    gap: 6px;
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   /*Footer*/
