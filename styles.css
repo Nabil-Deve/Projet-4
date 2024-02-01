@@ -4,16 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif; /* faudras reajuster les taille des polices */
+  font-family: "Nunito Sans", sans-serif;
 }
-/*
--mettre un padding-left aux button et non les centrer
-- les soulignements une div avec une sous div; et mettre en column dans la sous div 
--utilise un order pour les footer */
 
 :root {
   --white: #ffffff;
-  --blue: #4361ee;
+  --bluesky: #4361ee;
 }
 body {
   background-color: var(--white);
@@ -54,7 +50,7 @@ nav img {
 
 nav img[alt="image logo"] {
   position: relative;
-  height: 80%;
+  height: 100%;
   aspect-ratio: 1/1;
 }
 
@@ -78,11 +74,11 @@ nav img[alt="image logo"] {
   margin: 60px auto 20px;
 }
 
-.visual {
+span.visual {
+  text-decoration: underline #4361ee;
 }
 
 .story > img {
-  /* On sélectionne seulement le fils direct*/
   position: relative;
   top: 30px;
 }
@@ -104,7 +100,7 @@ nav img[alt="image logo"] {
 }
 .story button img {
   margin-left: 10px;
-} /* Pourquoi ça ne marche pas?*/
+}
 
 .story > section {
   display: flex;
@@ -242,12 +238,6 @@ span.brand {
 }
 
 /* Partie Happy*/
-
-.title-happy-clients {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
 .happy {
   background: #e9f4ff;
   width: 80%;
@@ -255,15 +245,28 @@ span.brand {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
+  margin-left: 50px;
 }
+
+.slider-left,
+.slider-right {
+  display: none;
+}
+.title-happy-clients {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 span.stories {
   text-decoration: underline #4361ee;
 }
 .happy img {
   position: relative;
   margin-top: 50px;
-  border-radius: 50%;
+}
+
+.happy .section > img {
+  align-items: center;
 }
 
 .happy p {
@@ -273,14 +276,25 @@ span.stories {
   font-weight: 400;
   line-height: 170%;
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.slider {
+  display: none;
+}
+
+.coma {
+  margin-left: 40%;
 }
 
 /* Partie Trois point */
 .trois-points {
+  margin-top: 10px;
 }
 /* Partie contact-us-today*/
 .contact-us-today {
-  margin: 40px 40px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 /* Partie contact-us-container*/
 .contact-us-coontainer {
@@ -329,7 +343,9 @@ span.cont {
 .coordonee img {
   grid-row: 1/3;
   justify-self: center;
-} /* Form*/
+}
+
+/* Form*/
 .formulaire {
   width: 80%;
   position: relative;
@@ -373,24 +389,29 @@ span.cont {
   color: white;
   font-weight: 600;
 }
+
+/* Partie Stay-updated*/
 .stay-updated {
   color: var(--Heading, #1a2630);
   text-align: center;
   font-size: 15px;
   font-weight: 700;
   line-height: 150%;
-  margin: 60px auto 40px;
+  margin: 100px auto 40px;
 }
 span.stay {
   text-decoration: underline #4361ee;
 }
 
 /* Partie Maintain*/
+.maintain {
+  margin-left: 60px;
+  margin-right: 60px;
+}
 .maintain .carte {
   border-radius: 15px;
   background: #e9f4ff;
   width: 100%;
-  margin-bottom: 30px;
   overflow: hidden;
   position: relative;
   padding-bottom: 2rem;
@@ -423,43 +444,22 @@ span.stay {
   vertical-align: middle;
 }
 
-.maintain button img {
-  vertical-align: middle;
-}
-/*.clapping {
-  border-radius: 15px;
-  background: #e9f4ff;
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.drawing {
-  width: 100%;
-  border-radius: 15px;
-  background: #e9f4ff;
-  margin-bottom: 30px;
-}
-
-.writing {
-  display: none;
-  width: 100%;
-  border-radius: 15px;
-  background: #e9f4ff;
-  margin-bottom: 30px;
-}*/
-
-.maintain button {
+/* Partie Maintain-button*/
+.maintain-button {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 54px;
   padding: 16px 34px;
   border-radius: 8px;
+  margin-top: 20px;
   margin-bottom: 50px;
-  margin-left: 35%;
   background: #4361ee;
   border: none;
   color: white;
+}
+.maintain-button img {
+  vertical-align: middle;
 }
 
 /* Partie Footer*/
@@ -472,6 +472,7 @@ footer {
   grid-template-columns: 1fr;
   width: 100%;
   padding: 0 6%;
+  margin-top: 100px;
 }
 .footer-logo-container {
   display: grid;
@@ -509,6 +510,10 @@ footer .social-icon img {
   color: #f5f5f5;
   font-size: 20px;
   font-weight: 700;
+}
+
+.email-container button img {
+  vertical-align: middle;
 }
 
 .courriel {
@@ -578,6 +583,10 @@ footer .social-icon img {
   margin-right: 10px;
 }
 
+.explore {
+  line-height: 1.9;
+}
+
 .copyright p {
   width: 335px;
   color: #f5f5f5;
@@ -594,6 +603,11 @@ footer .social-icon img {
 /* Version tablette  */
 @media screen and (min-width: 768px) {
   /* Partie story*/
+  .story > img {
+    width: 80%;
+    height: auto;
+  }
+
   .story {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -610,23 +624,46 @@ footer .social-icon img {
     text-align: left;
     font-size: 32px;
   }
-
-  .story > img {
-    margin-top: 20px;
-    margin-left: 50px;
-  }
   /* Partie elevate*/
+  .elevate p {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    width: 80%;
+  }
 
-  /*Partie services*/
+  .elevate img {
+    margin-left: 35%;
+  }
 
   /*Partie happy*/
 
+  .happy {
+    width: 50%;
+  }
+  .slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-left {
+    display: flex;
+    padding-top: 170px;
+    padding-right: 10px;
+    margin-top: 50px;
+  }
+
+  .slider-right {
+    display: flex;
+    padding-top: 170px;
+    padding-left: 20px;
+    margin-top: 50px;
+  }
   /* Partie contact-us-container*/
   .coordonnee-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  /* Partie stay-updates */
 
   /* Partie maintain */
   .maintain {
@@ -653,27 +690,33 @@ footer .social-icon img {
     grid-template-columns: 3fr 6fr;
   }
 
+  .info {
+    margin-right: 0px;
+  }
+
+  .explore {
+    padding-left: 100px;
+    gap: 10px;
+    line-height: 2;
+  }
+
   .footer-logo-container {
     display: grid;
     grid-template-columns: 1fr;
   }
 
   .footer-logo-container > img {
-    height: 100px;
+    width: 30%;
   }
 
   .copyright {
     grid-row: 3/4;
     grid-column: 1/3;
   }
-
-  .info {
-    margin-right: 120px;
-  }
 }
 
 /* Version Desktop */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1440px) {
   .email-container {
     grid-column: 3/4;
   }
@@ -696,14 +739,11 @@ footer .social-icon img {
     text-align: left;
     font-size: 54px;
   }
-  .story button {
-  }
 
   .story > img {
     margin-top: 80px;
     margin-left: 50px;
-    width: 600px;
-    height: 600px;
+    width: 80%;
   }
 
   /* Partie elevate*/
@@ -726,17 +766,22 @@ footer .social-icon img {
     line-height: 170%;
   }
 
+  .elevate .computer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .computer {
     margin-top: 50px;
   }
 
   .paragraphs p {
-    width: 100%;
+    text-align: left;
+    width: 150%;
     font-size: 20px;
     font-weight: 400;
     line-height: 170%;
     display: block;
-    margin-top: 30px;
+    margin-top: 100px;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -744,6 +789,7 @@ footer .social-icon img {
   }
 
   .elevate img {
+    margin-top: 5px;
     margin-left: 80px;
   }
 
@@ -776,12 +822,31 @@ footer .social-icon img {
   }
 
   /*Partie happy*/
-
   .happy {
     width: 70%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 100px;
   }
+
+  .title-happy-clients {
+    margin-top: 100px;
+  }
+  .slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-left {
+    padding-top: 135px;
+    padding-right: 20px;
+  }
+
+  .slider-right {
+    padding-top: 135px;
+    padding-left: 20px;
+  }
+
   .happy h1 {
     color: #1a2630;
     text-align: center;
@@ -789,9 +854,18 @@ footer .social-icon img {
     font-weight: 700;
   }
 
+  .happy p {
+    text-align: left;
+    width: 180%;
+  }
+
   .happy .section > img {
     display: flex;
     justify-content: center;
+  }
+
+  .coma {
+    margin-left: 0px;
   }
 
   /* Partie contact-us-container*/
@@ -815,9 +889,8 @@ footer .social-icon img {
     gap: 40px;
   }
   .formulaire {
-    width: 70%;
+    width: 80%;
     height: 100%;
-    transform: translate(35%);
   }
 
   .coordonnees-formulaire {
@@ -830,8 +903,6 @@ footer .social-icon img {
     grid-template-columns: 1fr;
   }
 
-  /* Partie stay-updates */
-
   /* Partie maintain */
   .maintain {
     display: grid;
@@ -842,11 +913,12 @@ footer .social-icon img {
   .maintain .carte:last-of-type {
     display: grid;
   }
-  /*Button Maintain */
-  .maintain button {
-    position: relative;
-    display: flex;
-    justify-content: center;
+
+  .maintain .carte p {
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #1a2630;
+    margin: 1rem 5%;
   }
 
   /*Footer*/
@@ -860,8 +932,28 @@ footer .social-icon img {
     grid-column: 2/3;
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr 3fr;
+    grid-template-columns: 1fr 3fr;
     column-gap: 20%;
+  }
+
+  .footer-logo-container > img {
+    padding-right: 200px;
+    width: 100%;
+  }
+
+  .footer-logo-container .social-icon {
+    margin-left: 40px;
+  }
+
+  .info {
+    width: 120%;
+    line-height: 2.5;
+  }
+
+  .explore {
+    padding-left: 100px;
+    gap: 10px;
+    line-height: 2;
   }
 
   .copyright {
